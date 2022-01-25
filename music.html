@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/music.css">
+		<link rel="stylesheet" href="assets/css/playlist.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+  
+	<title>Music</title>
+</head>
+
+<style>
+	
+	  
+	  /* ============= Begin Testimonial Flexbox ============ */
+	  #flex-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		width: 100%;
+		min-height: 400px;
+		height: 110vh;
+		max-width: 1000px;
+		margin: auto;
+		background-color: (--background-color)
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+		  0 1px 2px rgba(0, 0, 0, 0.24);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		position: relative;
+	  }
+	  
+	  #left-zone {
+		height: 50%;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		width: 100%;
+	  }
+	  
+	  #left-zone .list {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		list-style: none;
+		-ms-flex-line-pack: stretch;
+		align-content: stretch;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		margin: auto;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	  }
+	  
+	  .item input {
+		display: none;
+	  }
+	  
+	  label {
+		display: block;
+		opacity: 0.5;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+		position: relative;
+	  }
+	  
+	  label:hover {
+		opacity: 0.75;
+		cursor: pointer;
+	  }
+	  
+	  .content-test {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		transform: translateY(100%);
+		height: 50%;
+		width: 100%;
+		-webkit-transition: 0.5s ease-out;
+		-o-transition: 0.5s ease-out;
+		transition: 0.5s ease-out;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		pointer-events: none;
+	  }
+	  
+	  .content-test p {
+		max-width: 50%;
+		text-align: center;
+	  }
+	  
+	  #right-zone {
+		width: 100%;
+		-webkit-box-flex: 1;
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+		height: 50%;
+	  }
+	  
+	  input:checked ~ .content-test {
+		-webkit-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+		transform: translateY(0%);
+		-webkit-transition: -webkit-transform 1s;
+		transition: -webkit-transform 1s;
+		-o-transition: transform 1s;
+		transition: transform 1s;
+		transition: transform 1s, -webkit-transform 1s;
+		opacity: 1;
+	  }
+	  
+	  @media (min-width: 480px) {
+		#flex-container {
+		  -webkit-box-orient: horizontal;
+		  -webkit-box-direction: normal;
+		  -ms-flex-direction: row;
+		  flex-direction: row;
+		  min-height: auto;
+		  height: 400px;
+		  /* position: absolute; */
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		}
+	  
+		#left-zone .list {
+		  border-right: 2px solid #cccccc;
+		}
+	  
+		.content-test {
+		  width: 65%;
+		  height: 100%;
+		  pointer-events: auto;
+		  -webkit-transform: translateY(-100%);
+		  -ms-transform: translateY(-100%);
+		  transform: translateY(-100%);
+		}
+	  
+		#left-zone {
+		  width: 35%;
+		}
+	  
+		#right-zone {
+		  
+		  width: 65%;
+		}
+	  }
+	  /* If the screen size is 480px or less */
+	  @media (max-width: 480px) {
+		.content_testimonial-1 .picto {
+		  padding-top: 100px;
+		}
+		.content_testimonial-2 .picto {
+		  padding-top: 100px;
+		}
+		.content_testimonial-3 .picto {
+		  padding-top: 100px;
+		}
+		.content_testimonial-4 .picto {
+		  padding-top: 100px;
+		}
+		.item > label {
+		  font-size: 1.3rem;
+		}
+	  }
+	  
+	  .content_testimonial-1 .picto {
+		height: 100px;
+		width: 100px;
+		background-image: url("https://i.postimg.cc/RFBHkG46/diamond-Pest-Logo-small.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	  }
+	  
+	  .content_testimonial-1 h1 {
+		color: #d64541;
+		text-align: center;
+	  }
+	  
+	  .content_testimonial-2 .picto {
+		height: 100px;
+		width: 100px;
+		background-image: url("https://i.postimg.cc/bsqXXKCV/a-Plus-Handyman-Logo.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	  }
+	  
+	  .content_testimonial-2 h1 {
+		color: #f5d76e;
+	  }
+	  
+	  .content_testimonial-3 .picto {
+		height: 100px;
+		width: 100px;
+		background-image: url("https://i.postimg.cc/zV7sq04z/mod-Movers-Logo.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	  }
+	  
+	  .content_testimonial-3 h1 {
+		color: (--text-color);
+	  }
+	  
+	  .content_testimonial-4 .picto {
+		height: 100px;
+		width: 100px;
+		background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fsoundcloud.com%2Fpapisentertainment&psig=AOvVaw3HqSQGej-B33NmKMol2McL&ust=1643167679604000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJCi4-D6y_UCFQAAAAAdAAAAABAD");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	  }
+	  
+	  .content_testimonial-4 h1 {
+		color: #f27935;
+	  }
+	  
+	  .content-test h1:first-letter {
+		text-transform: uppercase;
+	  }
+	  
+	  input:checked ~ label {
+		opacity: 1;
+		-webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+		animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	  }
+	  
+	  input:checked ~ label.label_testimonial-1 {
+		color: #d64541;
+		border-right: solid 4px #d64541;
+	  }
+	  
+	  input:checked ~ label.label_testimonial-2 {
+		color: #f5d76e;
+		border-right: solid 4px #f5d76e;
+	  }
+	  
+	  input:checked ~ label.label_testimonial-3 {
+		color: #00b16a;
+		border-right: solid 4px #00b16a;
+	  }
+	  
+	  input:checked ~ label.label_testimonial-4 {
+		color: #f27935;
+		border-right: solid 4px #f27935;
+	  }
+	  
+	  label.label_testimonial-1:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		margin-left: 15px;
+		background-image: url("https://i1.sndcdn.com/avatars-000758816614-wu3o0w-t500x500.jpg");
+		background-position: center;
+		background-size: 80% 80%;
+		background-repeat: no-repeat;
+		border-radius: 70%;
+	  }
+	  
+	  label.label_testimonial-2:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		margin-left: 15px;
+		background-image: url("https://i1.sndcdn.com/avatars-MMgpBX4tNF7y7Knk-vUv8QQ-t240x240.jpg");
+		background-position: center;
+		background-size: 80% 80%;
+		border-radius: 70%;
+		background-repeat: no-repeat;
+	  }
+	  
+	  label.label_testimonial-3:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		margin-left: 15px;
+		background-image: url("https://i1.sndcdn.com/avatars-000729063274-gvvl36-t500x500.jpg");
+		background-position: center;
+		background-size: 80% 80%;
+		background-repeat: no-repeat;
+		border-radius: 80%;
+	  }
+	  
+	  label.label_testimonial-4:before {
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		margin-left: 15px;
+		background-image: url("https://i1.sndcdn.com/avatars-qr3uPYzsJ1Fb8gEC-8wsAgQ-t500x500.jpg");
+		background-position: center;
+		background-size: 80% 80%;
+		background-repeat: no-repeat;
+		border-radius: 80%;
+	  }
+	  
+	  label:first-letter {
+		text-transform: uppercase;
+	  }
+	  
+	  .label_testimonial-1:hover {
+		background-image: -webkit-gradient(
+		  linear,
+		  left top,
+		  right top,
+		  from(#ffffff),
+		  to(#d64541a3)
+		);
+		background-image: -webkit-linear-gradient(left, #ffffff, #d64541a3);
+		background-image: -o-linear-gradient(left, #ffffff, #d64541a3);
+		background-image: linear-gradient(to right, #ffffff, #d64541a3);
+		font-size: 1.2rem;
+		-webkit-transition: font-size 0.5s;
+		-o-transition: font-size 0.5s;
+		transition: font-size 0.5s;
+	  }
+	  
+	  .label_testimonial-2:hover {
+		background-image: -webkit-gradient(
+		  linear,
+		  left top,
+		  right top,
+		  from(#ffffff),
+		  to(#f5d76e59)
+		);
+		background-image: -webkit-linear-gradient(left, #ffffff, #f5d76e59);
+		background-image: -o-linear-gradient(left, #ffffff, #f5d76e59);
+		background-image: linear-gradient(to right, #ffffff, #f5d76e59);
+		font-size: 1.2rem;
+		-webkit-transition: font-size 0.5s;
+		-o-transition: font-size 0.5s;
+		transition: font-size 0.5s;
+	  }
+	  
+	  .label_testimonial-3:hover {
+		background-image: -webkit-gradient(
+		  linear,
+		  left top,
+		  right top,
+		  from(#ffffff),
+		  to(#00b16aa3)
+		);
+		background-image: -webkit-linear-gradient(left, #ffffff, #00b16aa3);
+		background-image: -o-linear-gradient(left, #ffffff, #00b16aa3);
+		background-image: linear-gradient(to right, #ffffff, #00b16aa3);
+		font-size: 1.2rem;
+		-webkit-transition: font-size 0.5s;
+		-o-transition: font-size 0.5s;
+		transition: font-size 0.5s;
+	  }
+	  
+	  .label_testimonial-4:hover {
+		background-image: -webkit-gradient(
+		  linear,
+		  left top,
+		  right top,
+		  from(#ffffff),
+		  to(#f27935a3)
+		);
+		background-image: -webkit-linear-gradient(left, #ffffff, #f27935a3);
+		background-image: -o-linear-gradient(left, #ffffff, #f27935a3);
+		background-image: linear-gradient(to right, #ffffff, #f27935a3);
+		font-size: 1.2rem;
+		-webkit-transition: font-size 0.5s;
+		-o-transition: font-size 0.5s;
+		transition: font-size 0.5s;
+	  }
+	  
+	  p.testimonialState {
+		margin-top: -5px;
+		font-size: 0.8rem;
+		font-style: italic;
+		color: #808080d4;
+	  }
+	  
+	  p.testimonialFrom {
+		margin-top: 5px;
+		font-weight: bold;
+		color: #33475c;
+	  }
+	  /* ============== End Testimonial Flexbox ============= */
+	  
+
+</style>
+
+
+		<body>
+
+			<!--==================== HEADER ====================-->
+			<header class="header" id="header">
+				<nav class="nav container">
+					<a href="#" class="nav__logo">
+						<img class="logo" src="assets/img/logo.png">
+						<i class="nav__logo-icon"></i>
+					</a>
+	
+					<div class="nav__menu" id="nav-menu">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="index.html"class="nav__link" >Home</a>
+							</li>
+							<li class="nav__item">
+								<a href="shop.html" class="nav__link">Shop</a>
+							</li>
+							<li class="nav__item">
+								<a href="music.html" class="nav__link active-link">Music</a>
+							</li>
+							<li class="nav__item">
+								<a href="gallery.html" class="nav__link">Gallery</a>
+							</li>
+							<li class="nav__item">
+								<a href="faqs.html" class="nav__link">FAQs</a>
+							</li>
+							<li class="nav__item">
+								<a href="contact.html" class="nav__link">Contact Us</a>
+							</li>
+						</ul>
+						<div class="nav__close" id="nav-close">
+							<i class="ri-close-line"></i>
+						</div>
+					</div>
+	
+					<div class="nav__btns">
+						<!-- Theme change button -->
+						<i class="ri-moon-line change-theme" id="theme-button"></i>
+						<div class="nav__toggle" id="nav-toggle">
+							<i class="bx bx-grid-alt"></i>
+						</div>
+					</header>
+				</nav>
+			</div>
+			<div>
+	<section class="home" id="home">
+	<div>
+		
+	<h3 class="section__title about__title">
+		<b>
+	PAPIS ENT. MUSIC</b>
+	</h3>
+	<CENTER>
+	<h>We upload the best songs and mixtapes on this page.
+	</h>
+</CENTER>
+	<br><br><br>
+ <!-- tracks part -->
+ <div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		<h3>Top Songs Of The Year 2021</h3>
+		<h>Earliest & lastest tracks</h>
+ <div class="top_tracks" id="top_tracks">
+	<div id="track"></div>
+	
+	<div id="track">
+		<img src="https://i1.sndcdn.com/avatars-000320146137-t1y13k-t240x240.jpg" alt="">
+		<div id="actions">
+			<a href="#">01</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+
+		<audio src="songs/1.mp3" id="music"></audio>
+
+		<div id="song_desc">
+		   <p>Gvnman Shift</p>
+		   <p>Skeng</p>
+		   <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		   <p id="message"></p>
+		</div>
+		<div id="actions_2">
+		  <p><a href="#"><i class='bx bx-share' ></i></a></p>
+		  <p><a href="songs/1.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+	<div id="track">
+		<img src="https://profileability.com/wp-content/uploads/2021/01/Gyakie.jpg?v=1626398546" alt="">
+		<div id="actions">
+			<a href="#">02</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="songs/2.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			<p>Forever</p>
+		   <p>Gyakie</p>
+		   <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		   <p id="message"></p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="2.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+	<div id="track">
+		<img src="https://stlucianewsnow.net/wp-content/uploads/2021/10/sYbIUqEENy.jpg" alt="">
+		<div id="actions">
+			<a href="#">03</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="songs/3.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Plat</p>
+			 <p>Umpa</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+			 <p id="message"></p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="3.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+	<div id="track">
+		<img src="https://urbanislandz.com/wp-content/uploads/2019/11/Popcaan-65.jpg" alt="">
+		<div id="actions">
+		<a href="#">04</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="songs/4.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Mamakita</p>
+			 <p>Popcaan</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="4.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+	<div id="track">
+		<img src="https://urbanislandz.com/wp-content/uploads/2019/09/Alkaline-77.jpg" alt="">
+		<div id="actions">
+			<a href="#">05</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="songs/5.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Nah Fi Like</p>
+			 <p>Alkaline</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="5.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+	<div id="track">
+		<img src="https://i1.sndcdn.com/avatars-000320146137-t1y13k-t240x240.jpg" alt="">
+		<div id="actions">
+			<a href="#">06</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+
+		<audio src="songs/1.mp3" id="music"></audio>
+
+		<div id="song_desc">
+		   <p>Gvnman Shift</p>
+		   <p>Skeng</p>
+		   <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		   <p id="message"></p>
+		</div>
+		<div id="actions_2">
+		  <p><a href="#"><i class='bx bx-share' ></i></a></p>
+		  <p><a href="songs/1.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+<BR>
+<BR>
+
+</div>
+		<br><br>
+		<div class="container">
+			<h3>DJs Top & Best Content</h3>
+			<h>Newly posted tracks. Just for you</h>
+			<br>
+			<br>
+				
+	  </div>
+  
+	  <div class="col-sm-7 mx-auto">
+		<header class="section-header text-center">
+		</header>
+	  </div>
+	  
+	  <div id="flex-container" class="testimonials">
+		<div id="left-zone">
+		  <ul class="list">
+			<li class="item">
+			  <input type="radio" id="radio_testimonial-1" name="basic_carousel" checked="checked" />
+			  <label class="label_testimonial-1" for="radio_testimonial-1">Natoxie</label>
+			  <div class="content-test content_testimonial-1">
+				<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1201246153&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/natoxie-rintox" title="NATOXIE" target="_blank" style="color: #cccccc; text-decoration: none;">NATOXIE</a> · <a href="https://soundcloud.com/natoxie-rintox/natoxie-shatta-bouyon" title="NATOXIE - SHATTA BOUYON" target="_blank" style="color: #cccccc; text-decoration: none;">NATOXIE - SHATTA BOUYON</a></div>				<p class="testimonialFrom"></p>
+			  </div>
+			</li>
+			<li class="item">
+			  <input type="radio" id="radio_testimonial-2" name="basic_carousel" />
+			  <label class="label_testimonial-2" for="radio_testimonial-2">Prostyle</label>
+			  <div class="content-test content_testimonial-2">
+				<span class=""></span>
+				<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1195285696&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/prostyle758" title="PROSTYLE 758" target="_blank" style="color: #cccccc; text-decoration: none;">PROSTYLE 758</a> · <a href="https://soundcloud.com/prostyle758/prostyle-certified-freaks-mix-adults-only-2022" title="Prostyle Certified Freaks Mix ( Adults Only ) 2022" target="_blank" style="color: #cccccc; text-decoration: none;">Prostyle Certified Freaks Mix ( Adults Only ) 2022</a></div>
+				<p class="testimonialFrom"></p>
+				<p class="testimonialState"></p>
+				<br>
+			  </div>
+			</li>
+			<li class="item">
+			  <input type="radio" id="radio_testimonial-3" name="basic_carousel" />
+			  <label class="label_testimonial-3" for="radio_testimonial-3">Bad Sound</label>
+			  <div class="content-test content_testimonial-3">
+				<span class=""></span>
+				<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/884705521&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/yohan-laurent-16675785" title="Dj yozo  (BAD SOUND)" target="_blank" style="color: #cccccc; text-decoration: none;">Dj yozo  (BAD SOUND)</a> · <a href="https://soundcloud.com/yohan-laurent-16675785/fin-dete-by-dj-yozo" title="FIN D&#x27;ETE BY DJ YOZO" target="_blank" style="color: #cccccc; text-decoration: none;">FIN D&#x27;ETE BY DJ YOZO</a></div>
+				<p class="testimonialFrom"></p>
+				<p class="testimonialState"></p>
+			  </div>
+			</li>
+			<li class="item">
+			  <input type="radio" id="radio_testimonial-4" name="basic_carousel" />
+			  <label class="label_testimonial-4" for="radio_testimonial-4">Papis</label>
+			  <div class="content-test content_testimonial-4">
+				<span class=""></span>
+				<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1136033710&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/papisentertainment" title="Papis&#x27; Entertainment" target="_blank" style="color: #cccccc; text-decoration: none;">Papis&#x27; Entertainment</a> · <a href="https://soundcloud.com/papisentertainment/dj-adoo-tboss-ft-papis-best-side-dubplate" title="DJ Adoo, Tboss Ft Papis - Best Side Dubplate" target="_blank" style="color: #cccccc; text-decoration: none;">DJ Adoo, Tboss Ft Papis - Best Side Dubplate</a></div>				<p></p>
+				<p class="testimonialFrom"></p>
+				<p class="testimonialState"></p>
+				<br>
+			  </div>
+			</li>
+		  </ul>
+		</div>
+		<div id="right-zone"></div>
+	  </div>
+	  
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!--==================== FOOTER ====================-->
+<footer class="footer section">
+	<div class="footer__container container grid">
+		<div class="footer__content">
+			<a href="#" class="footer__logo">
+				<a href="#" class="footer__logo">
+		   <img class="footer logo" src="assets/img/logo.png">
+		   <i class="nav__logo-icon"></i>
+	   </a>
+
+			<h3 class="footer__title">
+				Subscribe to our newsletter <br> to stay update
+			</h3>
+
+			<div class="footer__subscribe">
+				<input type="email" placeholder="Enter your email" class="footer__input">
+
+				<button class="button button--flex footer__button">
+					Subscribe
+					<i class="ri-arrow-right-up-line button__icon"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="footer__content">
+			<h3 class="footer__title">Our Address</h3>
+
+			<ul class="footer__data">
+				<li class="footer__information">Castries</li>
+				<li class="footer__information">Saint Lucia</li>
+				<li class="footer__information">1758-726-632</li>
+				<li class="footer__information"> <a href="privacy.html">Privacy Policy</a></li>
+				<li class="footer__information"> <a href="termsandconditions.html">Terms & Conditions</a></li>
+				<li class="footer__information"> <a href="returnpolicy.html">Return & Refund Policy</a></li>
+
+
+			</ul>
+		</div>
+
+		<div class="footer__content">
+			<h3 class="footer__title">Contact Us</h3>
+
+			<ul class="footer__data">
+				<li class="footer__information">+1 (758) 726-6532</li>
+				
+				<div class="footer__social">
+					<a href="https://www.facebook.com/" class="footer__social-link">
+						<i class="ri-facebook-fill"></i>
+					</a>
+					<a href="https://www.instagram.com/papisofficial_/" class="footer__social-link">
+						<i class="ri-instagram-line"></i>
+					</a>
+					<a href="https://wa.me/17587266532" class="footer__social-link">
+						<i class="ri-whatsapp-line"></i>
+					</a>
+				</div>
+			</ul>
+		</div>
+
+		<div class="footer__content">
+			<h3 class="footer__title">
+			Download Our app Today! <p>(CLICK HERE)</p>
+			</h3>
+			
+			<a href="papis_official.apk" download> <div class="footer__cards">
+				<img class="footer__card" src="assets/img/download.png">
+				
+			</a>
+			</div>
+		</div>
+	</div>
+
+	<p class="footer__copy">&#169; Papis Official. All rigths reserved</p>
+</footer>
+	  
+</main>
+		
+	<script>
+		// Makeshift carousel function that gets invoked with the Index to start it off, then the callback increments the index to recursively invoke the same function. Works even in IE11!
+var testimonialItems = document.querySelectorAll(".item label");
+var timer;
+function cycleTestimonials(index) {
+   timer = setTimeout(function() {
+    var evt;
+    if (document.createEvent){
+      //If browser = IE, then polyfill
+      evt = document.createEvent('MouseEvent');
+      evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+    } else {
+      //If Browser = modern, then create new MouseEvent
+      evt = new MouseEvent("click", {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            clientX: 20
+          });
+    }
+    var ele = "." + testimonialItems[index].className;
+    var ele2 = document.querySelector(ele)
+    ele2.dispatchEvent(evt);
+    index++; // Increment the index
+    if (index >= testimonialItems.length) {
+      index = 0; // Set it back to `0` when it reaches `3`
+    }
+    cycleTestimonials(index); // recursively call `cycleTestimonials()`
+    document.querySelector(".testimonials").addEventListener("click", function() {
+      clearTimeout(timer); //stop the carousel when someone clicks on the div
+    });
+  }, 2000); //adjust scroll speed in miliseconds
+}
+//run the function
+cycleTestimonials(0);
+	</script>
+	<script>
+		// I will be creating a different pen with touch support but right // now I have no time for it due to school
+
+const slider = document.querySelector(".items");
+const slides = document.querySelectorAll(".item");
+const button = document.querySelectorAll(".button");
+
+let current = 0;
+let prev = 4;
+let next = 1;
+
+for (let i = 0; i < button.length; i++) {
+	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+}
+
+const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+
+const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+
+const gotoNum = number => {
+	current = number;
+	prev = current - 1;
+	next = current + 1;
+
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+		slides[i].classList.remove("prev");
+		slides[i].classList.remove("next");
+	}
+
+	if (next == 5) {
+		next = 0;
+	}
+
+	if (prev == -1) {
+		prev = 4;
+	}
+
+	slides[current].classList.add("active");
+	slides[prev].classList.add("prev");
+	slides[next].classList.add("next");
+}
+	</script>
+	
+					
+            
+           
+        
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+		<script src="assets/js/playlist.js"></script>
+
+				</body>
+				</html>
