@@ -588,11 +588,11 @@ the website, in dark theme
 .product__circle{
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 81, 255, 0.452);
+  background-color: rgba(43, 109, 253, 0.26);
   border-radius: 50%;
   position: absolute;
   top: 10%;
-  left: 18%;
+  left: 20%;
 }
 
 .product__card:hover .product__img{
