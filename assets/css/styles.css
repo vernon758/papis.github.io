@@ -137,8 +137,16 @@ body.dark-theme{
   display: inline-flex;
   align-items: center;
   column-gap: 1rem;
+  
 }
 
+.shopping_bag{
+  size: 10em;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 0.51cm;
+}
 /*========== 
 Color changes in some parts of 
 the website, in dark theme 
@@ -175,7 +183,7 @@ the website, in dark theme
 }
 
 .container{
-  max-width: 968px;
+  max-width: 1080px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
 }
