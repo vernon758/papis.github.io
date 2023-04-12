@@ -1,0 +1,326 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'poppins', sans-serif;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+.main{
+	min-height: 100vh;
+	width: 120%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/*mid part*/
+.mid_part{
+	position: relative;
+	margin-top: 9em;
+	min-height: 260px;
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	align-content: center;
+	overflow: hidden;
+}
+.mid_part img{
+   height: 200px;
+   align-self: center;
+   border-radius: 10px;
+}
+.description{
+	margin-left: 8px;
+	padding: 8px;
+}
+.description .author_desc{
+	width: 25em;
+}
+.description p{
+	color: var(--title-color);
+}
+.description #A_name{
+	color: var(--title-color);
+    font-size: 3em;
+    font-weight: bold;
+}
+.description .buttons{
+	margin-top: 25px;.
+
+	display: flex;
+	align-items: center;
+}
+.description .buttons button{
+    outline: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background: #e91e1e;
+    color: #fff;
+
+}
+.description .buttons button:not(:first-child){
+	margin-left: 0.5em;
+	background: none;
+	color: var(--first-color);
+	border: 1px solid rgba(139, 139, 139, 0.356);
+}
+.description .buttons a{
+	text-decoration: none;
+	font-size: 2em;
+}
+
+
+/*top_tracks (songs)*/
+.top_tracks{
+	margin-top: 5em;
+	min-height: 220px;
+	width: 85%;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+    color: var(--text-color);
+}
+.top_tracks #track{
+	position: relative;
+    width: 100%;
+    display: flex;
+	align-items: center;
+    min-height: 50px;
+    border-bottom: 2px solid rgba(139, 139, 139, 0.356);;
+}
+.top_tracks #track:not(:first-child){
+   margin-top: 8px;
+}
+.top_tracks #track:hover{
+	background: rgba(255, 0, 0, 0.05);
+}
+.top_tracks #track img{
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+	border-radius: 7px;
+}
+.top_tracks #track p{
+	color: var(--text-color);
+}
+#actions{
+	padding: 0 5px;
+	min-width: 5%;
+	display: flex;
+	align-items: center;
+}
+#actions i{
+	cursor: pointer;
+}
+#actions p:not(:first-child){
+	margin-left: 15px;
+}
+.top_tracks #actions a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px;
+	color: #ff0000;
+	font-size: 2em;
+}
+.top_tracks #actions a:first-child{
+	font-size: 1.5em;
+	margin-left: 10px;
+}
+#actions i:hover{
+	color: #1eff0069;
+}
+/*song description part*/
+#song_desc{
+	position: relative;
+	flex: 1;
+	padding-left: 10px;
+}
+#song_desc #message{
+	position: absolute;
+	bottom: 5px;
+	right: 2.5em;
+	color: #ff0000;
+}
+#song_desc #total_download{
+	position: absolute;
+	bottom: 10px;
+	right: 22%;
+	color: #ff0000;
+}
+#song_desc p:nth-child(1){
+	text-transform: capitalize;
+}
+#song_desc p:nth-child(2){
+	opacity: 0.6;
+	margin-top: 5px;
+	font-size: 0.9em;
+}
+
+/*all id ~ heading*/
+#heading{
+	color: var(--text-color);
+	font-size: 1.8em;
+	font-family: cursive;
+}
+
+/*actions_2 (share & download button)*/
+#actions_2{
+	min-width: 5%;
+	padding: 3px;
+	display: flex;
+	justify-content: right;
+}
+#actions_2 a{ 
+	color: var(--text-color);
+}
+#actions_2 p{
+	font-size: 1.2em;
+}
+#actions_2 p:first-child{
+	margin-right: 12px;
+	color: var(--text-color);
+
+}
+
+/*top progress bar*/
+.progress_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #cc33ff 0%, #ff0066 100%);
+  width: 0%;
+  z-index: 100;
+}
+
+
+/*scroll bar style*/
+::-webkit-scrollbar {
+	height: 8px;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(to right ,transparent, #EC407A);
+	border-radius: 5px;
+}
+
+
+
+
+
+/*these codes will only execute when the screen size will be 700px*/
+@media(max-width: 700px){
+	#responsive_menu{
+	   display: block;
+    }
+	.top_tracks{
+		width: 95%;
+	}
+	.user_comments,.mid_part{
+		width: 95%;
+	}
+	.comments{
+		min-height: 230px;
+		align-items: center;
+        flex-direction: column;
+	}
+	.comments .comment:not(:first-child){
+		margin-top: 15px;
+	}
+	.comments .comment{
+		width: 100%;
+		padding: 15px 10px;
+	}
+	.description .buttons a{
+	   font-size: 1em;
+    }
+    .description .buttons button{
+    	font-size: 1.2em;
+    	padding: 5px 15px;
+    }
+    .description #A_name{
+    	font-size: 2em;
+    }
+    .mid_part{
+    	height: 180px;
+		
+    }
+ 
+    #total_download{
+    	display: none;
+    }
+    .nav_content li{
+    	margin: 5px;
+    }
+    #song_desc #message{
+    	bottom: 3px;
+    	font-size: 0.9em;
+    }
+    .mid_part img{
+       height: 200px;
+     }
+     .description .author_desc{
+	   width: 25em;
+	}
+	.popular_creator{
+		width: 95%;
+	}
+	.active_top_navbar{
+	   max-height: 100vh;     
+    }
+
+}
+
+/* & these codes will execute when the screen size will be 500px*/
+@media(max-width: 500px){
+    #song_desc p:nth-child(1){
+    	font-size: 0.9em;
+    }
+    .description .buttons button{
+    	font-size: 1.2em;
+    	padding: 5px 10px;
+    }
+    .description p{
+    	font-size: 0.88em;
+    }
+    .mid_part img{
+       height: 100px;
+     }
+    #actions a:first-child{
+	   display: none;
+    }
+    .description .author_desc{
+	   width: 20em;
+	}
+	.comments .comment{
+		padding-bottom: 25px;
+	}
+}
+@media screen and (max-width: 500px) {
+.mid_part{
+	margin-top: 2em;
+	height: 60vh;
+}
+.mid_part img{
+	height: 114px;
+	align-self: center;
+	border-radius: 10px;
+ }
+ .description{
+	 margin-bottom: 20px;
+align-self: center;
+}
+/*by Dev Ideas*/
+/*finished 🤕*/

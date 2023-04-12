@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/music.css">
+		<link rel="stylesheet" href="assets/css/playlist.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+
+
+
+    
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+	
+  
+	<title>Brad Bailey</title>
+</head>
+
+    <style>
+
+		body{
+			margin: var(--header-height) 0 0 0;
+			background-color: var(--body-color);
+			color: var(--text-color);
+			transition: .8s; /*For animation dark mode*/
+		  }
+		   
+				.album{
+					position: relative;
+					  display: block;
+					  border-radius: 100px;
+					  overflow: hidden;
+					  transition: all ease 0.4s;
+				}
+				  .album-poster{
+					  position: relative;
+					  display: block;
+					  border-radius: 14px;
+					  overflow: hidden;
+					  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.233) ;
+					  transition: all ease 0.4s;
+					  animation: mymove 4s infinite;
+}
+
+@keyframes mymov {
+
+  100% {box-shadow: 0px 2px 4px purple;}
+  80% {box-shadow: 0px 2px 4px blue;}
+  40% {box-shadow: 0px 2px 4px red;}
+
+
+
+				  h3{
+					  font-size: 34px;
+				  }
+
+				  p{
+					  font-size: 15px;
+				  }
+
+				  h{
+						  font-size: 16px;
+						  padding-bottom: 15px;
+                          margin-top: 30px;
+				  }
+
+				  h4{
+					  font-size: 16px;
+					  text-transform: uppercase;
+					  margin-top: 15px;
+					  text-align: center;
+					  font-weight: 700;
+				  }
+
+				  h5{
+					font-size: 16px;
+					text-transform: uppercase;
+					margin-top: 15px;
+					font-weight: 700;
+				}
+		  
+				  /*default is hide music player*/
+				  #aplayer{
+					  border-radius: 15px;
+					  position: fixed;
+					  bottom: -100%;
+					  left: 0;
+					  width: 100%;
+					  margin: 0;
+					  box-shadow: 0 -2px 2px #dadada;
+					  background-color: var(--body-color);
+					  transition: all ease 0.5s;
+				  }
+				  #aplayer.showPlayer{
+					  bottom: 0;
+				  }
+				  
+		  
+			  </style>
+
+		<body>
+	
+			<!--==================== HEADER ====================-->
+			<header class="header" id="header">
+				<nav class="nav container">
+					<a href="#" class="nav__logo">
+						<img class="logo" src="assets/img/logo.png">
+						<i class="nav__logo-icon"></i>
+					</a>
+	
+					<div class="nav__menu" id="nav-menu">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="index.html"class="nav__link" >Home</a>
+							</li>
+							<li class="nav__item">
+								<a href="shop.html" class="nav__link">Shop</a>
+							</li>
+							<li class="nav__item">
+								<a href="music.html" class="nav__link active-link">Music</a>
+							</li>
+							<li class="nav__item">
+								<a href="gallery.html" class="nav__link">Gallery</a>
+							</li>
+							<li class="nav__item">
+								<a href="faqs.html" class="nav__link">FAQs</a>
+							</li>
+							<li class="nav__item">
+								<a href="contact.html" class="nav__link">Contact Us</a>
+							</li>
+						</ul>
+						<div class="nav__close" id="nav-close">
+							<i class="ri-close-line"></i>
+						</div>
+					</div>
+	
+					<div class="nav__btns">
+						<!-- Theme change button -->
+						<i class="ri-moon-line change-theme" id="theme-button"></i>
+						<div class="nav__toggle" id="nav-toggle">
+							<i class="bx bx-grid-alt"></i>
+						</div>
+					</header>
+				</nav>
+			
+		
+												
+	</div>
+	<div class="container">
+<!--  mid part -->
+<div class="mid_part">
+	<img src="assets/img/brad.jpeg" alt="">
+
+	<div class="description">
+		<h3 id="A_name">Brad Bailey</h3>
+		<p>Trinidadian/Dancehall-Artiste</p>
+		<br>
+		<div class="author_desc">
+		   <p>Brad Bailey,18, was shot dead on Blackford Street in Cantaro Village, Santa Cruz.</p>
+		</div>
+
+		 <div class="buttons">
+			 <a href="#track">
+		   <button><i class='bx bx-play'></i></button></a>
+		   <button><i class='bx bxs-like' ></i></button>
+
+		 </div>
+
+	</div>
+</div>
+<br>
+ <!-- tracks part -->
+ <div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		<h3>Top Songs Of Brad Bailey</h3>
+		<h>Earliest & lastest tracks</h>
+ <div class="top_tracks" id="top_tracks">
+	<div id="track"></div>
+	
+
+
+
+
+<!--1-->
+
+	<div id="track">
+		<img src="https://i1.sndcdn.com/artworks-ysGa2Ccfd15h-0-t500x500.png" alt="">
+		<div id="actions">
+			<a href="#">01</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+
+		<audio src="bradsongs/bornbad.mp3" id="music"></audio>
+
+		<div id="song_desc">
+		   <p>Born Bad</p>
+		   <p>Brad</p>
+		   <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		   <p id="message"></p>
+		</div>
+		<div id="actions_2">
+		  <p><a href="#"><i class='bx bx-share' ></i></a></p>
+		  <p><a href="bradsongs/bornbad.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+<!--2-->
+
+	<div id="track">
+		<img src="https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/ad/85/1c/ad851c99-a565-1f40-04fa-ce96de9413f9/859736547217_cover.jpg/400x400cc.jpg" alt="">
+		<div id="actions">
+			<a href="#">02</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="bradsongs/protectmyfamily.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			<p>Protect My Family</p>
+		   <p>Brad</p>
+		   <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		   <p id="message"></p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="bradsongs/protectmyfamily.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+<!--3-->
+
+	<div id="track">
+		<img src="https://i1.sndcdn.com/artworks-SAV44wBfEzRLKYdn-JgNwPw-t500x500.jpg" alt="">
+		<div id="actions">
+			<a href="#">03</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="bradsongs/gwanso.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Gwan So</p>
+			 <p>Brad</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+			 <p id="message"></p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="bradsongs/gwanso.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+
+<!--4-->
+
+	<div id="track">
+		<img src="https://i.ytimg.com/vi/PMrYvMfmCaY/maxresdefault.jpg" alt="">
+		<div id="actions">
+		<a href="#">04</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="bradsongs/startit.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Start It</p>
+			 <p>Brad</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="bradsongs/startit.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+
+	<!--5-->
+
+	<div id="track">
+		<img src="https://angartwork.akamaized.net/webp/?id=148185922&size=296" alt="">
+		<div id="actions">
+			<a href="#">05</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="bradsongs/lifestory.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>Life Story</p>
+			 <p>Brad</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="bradsongs/lifestyle.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+
+
+<!--6-->
+	
+	<div id="track">
+		<img src="https://assets.audiomack.com/king-jarrel/0786377094a2ca194f1a79949014787bb41e64307f30666c42114b2af7ee5a0a.jpeg?width=1000&height=1000&max=true" alt="">
+		<div id="actions">
+			<a href="#">06</i></a>
+			<a id="play_pause"><i class='bx bx-play'></i></a>
+		</div>
+		<audio src="bradsongs/itnowstart.mp3" id="music"></audio>
+
+		<div id="song_desc">
+			 <p>It Now Start</p>
+			 <p>Brad</p>
+			 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+		</div>
+
+		<div id="actions_2">
+		  <p><i class='bx bx-share' ></i></p>
+		  <p><a href="bradsongs/itnowstart.mp3" download><i class='bx bx-download'></i></a></p>
+		</div>
+	</div>
+
+
+
+
+
+<!--7-->
+	
+<div id="track">
+	<img src="https://assets.audiomack.com/jarrelbadlikethat/4c48be90c2a93851a1f29a1ee7ebbec1de9663d7f922fe54a63e1041f4f00639.jpeg?width=1000&height=1000&max=true" alt="">
+	<div id="actions">
+		<a href="#">07</i></a>
+		<a id="play_pause"><i class='bx bx-play'></i></a>
+	</div>
+	<audio src="bradsongs/faker.mp3" id="music"></audio>
+
+	<div id="song_desc">
+		 <p>Faker</p>
+		 <p>Brad</p>
+		 <p id="total_download"><i class='bx bx-download'></i>&nbsp;&nbsp;</p>
+	</div>
+
+	<div id="actions_2">
+	  <p><i class='bx bx-share' ></i></p>
+	  <p><a href="bradsongs/faker.mp3" download><i class='bx bx-download'></i></a></p>
+	</div>
+</div>
+
+
+         <!--==================== FOOTER ====================-->
+         <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <a href="#" class="footer__logo">
+                   <img class="footer logo" src="assets/img/logo.png">
+                   <i class="nav__logo-icon"></i>
+               </a>
+    
+                    <h3 class="footer__title">
+                        Subscribe to our newsletter <br> to stay update
+                    </h3>
+    
+                    <div class="footer__subscribe">
+                        <input type="email" placeholder="Enter your email" class="footer__input">
+    
+                        <button class="button button--flex footer__button">
+                            Subscribe
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Our Address</h3>
+    
+                    <ul class="footer__data">
+                        <li class="footer__information">Castries</li>
+                        <li class="footer__information">Saint Lucia</li>
+                        <li class="footer__information">1758-726-632</li>
+                        <li class="footer__information"> <a href="privacy.html">Privacy Policy</a></li>
+                        <li class="footer__information"> <a href="termsandconditions.html">Terms & Conditions</a></li>
+                        <li class="footer__information"> <a href="returnpolicy.html">Return & Refund Policy</a></li>
+
+
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">Contact Us</h3>
+    
+                    <ul class="footer__data">
+                        <li class="footer__information">+1 (758) 726-6532</li>
+                        
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/papisofficial_/" class="footer__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://wa.me/17587266532" class="footer__social-link">
+                                <i class="ri-whatsapp-line"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+    
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                    Download Our app Today! <p>(CLICK HERE)</p>
+                    </h3>
+                    
+                    <a href="papis_official.apk" download> <div class="footer__cards">
+                        <img class="footer__card" src="assets/img/download.png">
+                        
+                    </a>
+                    </div>
+                </div>
+            </div>
+    
+            <p class="footer__copy">&#169; Papis Official. All rigths reserved</p>
+        </footer>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+		<script src="assets/js/playlist.js"></script>
+
+				</body>
+				</html>
